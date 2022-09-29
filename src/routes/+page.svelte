@@ -6,9 +6,7 @@
 	import Placeholder from '@tiptap/extension-placeholder';
 	import { localStore } from 'svelte-persistent';
 	import writableDerived from 'svelte-writable-derived';
-
-	let store = localStore('key', 'defaultValue');
-
+  
 	let element: HTMLDivElement;
 	let editor: Editor;
 	let content: Writable<JSONContent> = writableDerived(
