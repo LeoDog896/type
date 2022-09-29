@@ -6,11 +6,11 @@
 	import Placeholder from '@tiptap/extension-placeholder';
 	import { localStore } from 'svelte-persistent';
 	import writableDerived from 'svelte-writable-derived';
-  
+
 	let element: HTMLDivElement;
 	let editor: Editor;
 	let content: Writable<JSONContent> = writableDerived(
-		localStore('content', '{}'),
+		localStore('leodog896/type/content', '{}'), // so turns out i am silly and have multiple localhost variables
 		JSON.parse,
 		JSON.stringify
 	);
