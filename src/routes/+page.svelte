@@ -23,11 +23,15 @@
 	import js from 'highlight.js/lib/languages/javascript'
 	import ts from 'highlight.js/lib/languages/typescript'
 	import html from 'highlight.js/lib/languages/xml'
+	import rust from 'highlight.js/lib/languages/rust'
+	import go from 'highlight.js/lib/languages/go'
 
 	lowlight.registerLanguage('html', html)
 	lowlight.registerLanguage('css', css)
 	lowlight.registerLanguage('js', js)
 	lowlight.registerLanguage('ts', ts)
+	lowlight.registerLanguage('rust', rust)
+	lowlight.registerLanguage('go', go)
 
 	import { localStore } from 'svelte-persistent';
 	import writableDerived from 'svelte-writable-derived';
