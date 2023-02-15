@@ -1,16 +1,44 @@
 <script lang="ts">
 	import type { Writable } from 'svelte/store';
+	import "../prose.scss"
 	import { onMount, onDestroy } from 'svelte';
+
 	import { Editor, type JSONContent } from '@tiptap/core';
-	import StarterKit from '@tiptap/starter-kit';
+	import Document from '@tiptap/extension-document';
+	import CodeBlock from '@tiptap/extension-code-block';
+	import Lowlight from '@tiptap/extension-code-block-lowlight';
+	import Text from '@tiptap/extension-text';
+	import Paragraph from '@tiptap/extension-paragraph';
 	import Placeholder from '@tiptap/extension-placeholder';
+	import Bold from '@tiptap/extension-bold';
+	import Code from '@tiptap/extension-code';
+	import Italic from '@tiptap/extension-italic';
+	import Strike from '@tiptap/extension-strike';
+	import Dropcursor from '@tiptap/extension-dropcursor';
+	import Gapcursor from '@tiptap/extension-gapcursor';
+	import History from '@tiptap/extension-history';
+
+	import { lowlight } from 'lowlight/lib/core'
+	import css from 'highlight.js/lib/languages/css'
+	import js from 'highlight.js/lib/languages/javascript'
+	import ts from 'highlight.js/lib/languages/typescript'
+	import html from 'highlight.js/lib/languages/xml'
+
+	lowlight.registerLanguage('html', html)
+	lowlight.registerLanguage('css', css)
+	lowlight.registerLanguage('js', js)
+	lowlight.registerLanguage('ts', ts)
+
 	import { localStore } from 'svelte-persistent';
 	import writableDerived from 'svelte-writable-derived';
 
 	let element: HTMLDivElement;
 	let editor: Editor;
 	let content: Writable<JSONContent> = writableDerived(
-		localStore('leodog896/type/content', '{}'), // so turns out i am silly and have multiple localhost variables
+		// so turns out i am silly and have multiple localhost variables
+		// (this site is hosted at leodog896.github.io)
+		// but gotta stay silly you know
+		localStore('leodog896/type/content', '{}'),
 		JSON.parse,
 		JSON.stringify
 	);
@@ -20,13 +48,31 @@
 	}
 
 	onMount(() => {
+
+		const extendedKit = Document
+			.extend({
+				addKeyboardShortcuts() {
+					return {
+						"Tab": () => this.editor.commands.insertContent("\t")
+					}
+				}
+			})
+
 		editor = new Editor({
 			element: element,
 			extensions: [
-				StarterKit.configure({
-					bulletList: false,
-					orderedList: false
-				}),
+				extendedKit,
+				Text,
+				Paragraph,
+				CodeBlock,
+				Lowlight.configure({ lowlight }),
+				Bold,
+				Code,
+				Italic,
+				Strike,
+				History,
+				Gapcursor,
+				Dropcursor,
 				Placeholder.configure({
 					placeholder: 'Type anything...'
 				})
