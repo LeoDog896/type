@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Writable } from 'svelte/store';
-	import "../prose.scss"
+	import '../prose.scss';
 	import { onMount, onDestroy } from 'svelte';
 
 	import { Editor, type JSONContent } from '@tiptap/core';
@@ -18,26 +18,25 @@
 	import Gapcursor from '@tiptap/extension-gapcursor';
 	import History from '@tiptap/extension-history';
 
-	import { lowlight } from 'lowlight/lib/core'
-	import css from 'highlight.js/lib/languages/css'
-	import js from 'highlight.js/lib/languages/javascript'
-	import ts from 'highlight.js/lib/languages/typescript'
-	import html from 'highlight.js/lib/languages/xml'
-	import rust from 'highlight.js/lib/languages/rust'
-	import go from 'highlight.js/lib/languages/go'
-	import java from 'highlight.js/lib/languages/java'
-	import kotlin from 'highlight.js/lib/languages/kotlin'
-	import scala from 'highlight.js/lib/languages/scala'
+	import { lowlight } from 'lowlight/lib/core';
+	import css from 'highlight.js/lib/languages/css';
+	import js from 'highlight.js/lib/languages/javascript';
+	import ts from 'highlight.js/lib/languages/typescript';
+	import html from 'highlight.js/lib/languages/xml';
+	import rust from 'highlight.js/lib/languages/rust';
+	import go from 'highlight.js/lib/languages/go';
+	import java from 'highlight.js/lib/languages/java';
+	import kotlin from 'highlight.js/lib/languages/kotlin';
+	import scala from 'highlight.js/lib/languages/scala';
 
-	lowlight.registerLanguage('html', html)
-	lowlight.registerLanguage('css', css)
-	lowlight.registerLanguage('js', js)
-	lowlight.registerLanguage('ts', ts)
-	lowlight.registerLanguage('rust', rust)
-	lowlight.registerLanguage('go', go)
-	lowlight.registerLanguage('java', java),
-	lowlight.registerLanguage('kotlin', kotlin)
-	lowlight.registerLanguage('scala', scala)
+	lowlight.registerLanguage('html', html);
+	lowlight.registerLanguage('css', css);
+	lowlight.registerLanguage('js', js);
+	lowlight.registerLanguage('ts', ts);
+	lowlight.registerLanguage('rust', rust);
+	lowlight.registerLanguage('go', go);
+	lowlight.registerLanguage('java', java), lowlight.registerLanguage('kotlin', kotlin);
+	lowlight.registerLanguage('scala', scala);
 
 	import { localStore } from 'svelte-persistent';
 	import writableDerived from 'svelte-writable-derived';
@@ -58,15 +57,13 @@
 	}
 
 	onMount(() => {
-
-		const extendedKit = Document
-			.extend({
-				addKeyboardShortcuts() {
-					return {
-						"Tab": () => this.editor.commands.insertContent("\t")
-					}
-				}
-			})
+		const extendedKit = Document.extend({
+			addKeyboardShortcuts() {
+				return {
+					Tab: () => this.editor.commands.insertContent('\t')
+				};
+			}
+		});
 
 		editor = new Editor({
 			element: element,
