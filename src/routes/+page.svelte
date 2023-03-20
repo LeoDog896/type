@@ -2,6 +2,7 @@
 	import type { Writable } from 'svelte/store';
 	import '../prose.scss';
 	import { onMount, onDestroy } from 'svelte';
+	import { persisted } from 'svelte-local-storage-store'
 
 	import { Editor, type JSONContent } from '@tiptap/core';
 	import Document from '@tiptap/extension-document';
@@ -39,22 +40,14 @@
 	lowlight.registerLanguage('kotlin', kotlin);
 	lowlight.registerLanguage('scala', scala);
 
-	import { localStore } from 'svelte-persistent';
-	import writableDerived from 'svelte-writable-derived';
-
 	let element: HTMLDivElement;
 	let editor: Editor;
-	let content: Writable<JSONContent> = writableDerived(
-		// so turns out i am silly and have multiple localhost variables
-		// (this site is hosted at leodog896.github.io)
-		localStore('leodog896/type/content', '{}'),
-		JSON.parse,
-		JSON.stringify
+	let content: Writable<JSONContent> = persisted(
+		'leodog896/type/content', {}
 	);
 
-	$: {
-		if (editor) $content = editor.getJSON() ?? {};
-	}
+	$: console.log($content)
+	$: if (editor) $content = editor.getJSON() ?? {};
 
 	onMount(() => {
 		const extendedKit = Document.extend({
