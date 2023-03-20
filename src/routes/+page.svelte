@@ -35,7 +35,8 @@
 	lowlight.registerLanguage('ts', ts);
 	lowlight.registerLanguage('rust', rust);
 	lowlight.registerLanguage('go', go);
-	lowlight.registerLanguage('java', java), lowlight.registerLanguage('kotlin', kotlin);
+	lowlight.registerLanguage('java', java);
+	lowlight.registerLanguage('kotlin', kotlin);
 	lowlight.registerLanguage('scala', scala);
 
 	import { localStore } from 'svelte-persistent';
@@ -46,7 +47,6 @@
 	let content: Writable<JSONContent> = writableDerived(
 		// so turns out i am silly and have multiple localhost variables
 		// (this site is hosted at leodog896.github.io)
-		// but gotta stay silly you know
 		localStore('leodog896/type/content', '{}'),
 		JSON.parse,
 		JSON.stringify
