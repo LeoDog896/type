@@ -1149,6 +1149,11 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
+"@popperjs/core@^2.9.0":
+  version "2.11.6"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
+  integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
 "@remirror/core-constants@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@remirror/core-constants/-/core-constants-2.0.0.tgz#a52f89059d93955e00810023cc76b4f7db9650bf"
@@ -1294,6 +1299,11 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-bold/-/extension-bold-2.0.0-beta.217.tgz#94be8feed4e26e5f103d5a3a386c4079d946454f"
   integrity sha512-oLzekoVWjvkAbDyOIv4Aj9DzjIwCQLTy33kXH/ItTxH2Z/zxZ+Et3y9qAZi0eR8x8wO552cG41lYUte4tuwo1w==
 
+"@tiptap/extension-bullet-list@^2.0.0-beta.220":
+  version "2.0.0-beta.220"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-bullet-list/-/extension-bullet-list-2.0.0-beta.220.tgz#ffc04992bbee53bc858aab6c082f17419a2236b7"
+  integrity sha512-QQ/0ZlYy6Hgb+UAc79V+fxvI+AaQf20cbKtBXaR8TIZ0x4FotSma89bKh+CIXMhFiBGXTcYBaYhl7OwACsKtxw==
+
 "@tiptap/extension-code-block-lowlight@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-code-block-lowlight/-/extension-code-block-lowlight-2.0.0-beta.217.tgz#48018c776f68ec070fa28b5189a7233fb421d58a"
@@ -1319,20 +1329,42 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-dropcursor/-/extension-dropcursor-2.0.0-beta.217.tgz#6bb99051c576787cf2e6d8ad3d0004dd3b898268"
   integrity sha512-+HkLmLBKSAJB987KM6z/pxsE+QMr7wZJiTSJv4JSTQnSjKwyJIHbfYNvNgWZo0k9MSncmLGhd/c4TFxYJZ762w==
 
+"@tiptap/extension-floating-menu@^2.0.0-beta.220":
+  version "2.0.0-beta.220"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-floating-menu/-/extension-floating-menu-2.0.0-beta.220.tgz#35eb154227533ada738c922be2f8cf18426fe4bf"
+  integrity sha512-+WfcBEedm82ntaVIEQAGz0Om96Rpav7a+4f7e8N4PrLKm6nZ3gBaEkZVQ6vjJ6S/1htiWCv1XosYIwRboPBG0w==
+  dependencies:
+    tippy.js "^6.3.7"
+
 "@tiptap/extension-gapcursor@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-gapcursor/-/extension-gapcursor-2.0.0-beta.217.tgz#c3e59b8a08ababc5d267afc5f2417e515245d098"
   integrity sha512-BMZAeMuba41EOmSo8ZEClarbrO4XDfGvOslWkjJwqPyJ4oO3nHtX8ep13g6Y3RhMSUDEGmBSUXEKVuUPgSS+Qg==
+
+"@tiptap/extension-heading@^2.0.0-beta.220":
+  version "2.0.0-beta.220"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-heading/-/extension-heading-2.0.0-beta.220.tgz#b4889de7b3f152ff88a119d6cb6a22537eff73a2"
+  integrity sha512-7mrHRj++UaZ26C2Gjwb0WKWAzpiKb8TOYkVC2uMaCwaNhLDXpFEwZ7RtJRSTNBHkIGnMO46BH8Z0qlkFMmk9Jw==
 
 "@tiptap/extension-history@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-history/-/extension-history-2.0.0-beta.217.tgz#1bbe8ecc7bfc6384a12091b4b0b4433789b3d1a2"
   integrity sha512-wdgAGMTFVeEh6hlO1Iy0l0LzqUVuoplrYnc2zjry4YFGCJbWwQqLKEKQaHIvmMea0PaXW4Q5wpNy875+UoXDOw==
 
+"@tiptap/extension-image@^2.0.0-beta.220":
+  version "2.0.0-beta.220"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-image/-/extension-image-2.0.0-beta.220.tgz#c197b0dbd2f5d7a08f91e63cb8ca98c1972159a4"
+  integrity sha512-xyzlY/cupj/7AVqybQDaPaJ3SwKqe12xMWQlWxhhksuNpbQ6RGHrJz0DBSe61kIkaTZmIUBw055IFEMOPFF53g==
+
 "@tiptap/extension-italic@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-italic/-/extension-italic-2.0.0-beta.217.tgz#e6470cfd1763af0141f74165e404029332bca0bf"
   integrity sha512-Oua5QbsOJ/MNV41fvbBtJOE/ciw2AjWybSiPkn8clu1/KjieE9dectlj+COaNbVIOccTNhurECpqfF0h8K87Kg==
+
+"@tiptap/extension-list-item@^2.0.0-beta.220":
+  version "2.0.0-beta.220"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-list-item/-/extension-list-item-2.0.0-beta.220.tgz#c2fcff1fb9148d303d78b0336032a6353a86ff6c"
+  integrity sha512-+O0ivwxPP2l/m9PAowb2ytDT/cM5kwu0s1W5MUsHPIqf+M6ahnl4ESjhWZfDHUzvjqPq6MTbqoQLHbB1KS/N7w==
 
 "@tiptap/extension-paragraph@^2.0.0-beta.217":
   version "2.0.0-beta.217"
@@ -3773,6 +3805,13 @@ tiny-glob@^0.2.9:
   dependencies:
     globalyzer "0.1.0"
     globrex "^0.1.2"
+
+tippy.js@^6.3.7:
+  version "6.3.7"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-6.3.7.tgz#8ccfb651d642010ed9a32ff29b0e9e19c5b8c61c"
+  integrity sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==
+  dependencies:
+    "@popperjs/core" "^2.9.0"
 
 to-fast-properties@^2.0.0:
   version "2.0.0"

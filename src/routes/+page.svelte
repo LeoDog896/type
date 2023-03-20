@@ -18,6 +18,9 @@
 	import Dropcursor from '@tiptap/extension-dropcursor';
 	import Gapcursor from '@tiptap/extension-gapcursor';
 	import History from '@tiptap/extension-history';
+	import Heading from '@tiptap/extension-heading'
+	import Image from '@tiptap/extension-image'
+	import ListItem from '@tiptap/extension-list-item'
 
 	import { lowlight } from 'lowlight/lib/core';
 	import css from 'highlight.js/lib/languages/css';
@@ -72,6 +75,9 @@
 				History,
 				Gapcursor,
 				Dropcursor,
+				Heading,
+				ListItem,
+				Image,
 				Placeholder.configure({
 					placeholder: 'Type anything...'
 				})
