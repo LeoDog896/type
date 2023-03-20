@@ -46,7 +46,6 @@
 		'leodog896/type/content', {}
 	);
 
-	$: console.log($content)
 	$: if (editor) $content = editor.getJSON() ?? {};
 
 	onMount(() => {
