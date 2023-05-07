@@ -1,3 +1,3 @@
 # type
 
-simple notepad app that I use to take notes and write code.
+a simple notepad app built with [tiptap](https://tiptap.dev/) and [https://kit.svelte.dev/](sveltekit).
